@@ -14,68 +14,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-
-    <style>
-        body {
-            background-color: #d3d3d3;
-        }
-
-        div .img-responsive {
-            background-color: white;
-            padding: 10px 25px;
-        }
-
-        div img {
-            width: 100%;
-            height: 100%;
-        }
-
-        section h3 {
-            margin-bottom: 30px;
-            font-family: sans-serif;
-            color: brown;
-        }
-
-        .col-md-12 h1 {
-            color: brown;
-        }
-
-        .footer-class {
-            background-color: rgb(94, 86, 86);
-            width: 100%;
-            color: white;
-            margin-top: 30px;
-            padding: 20px;
-        }
-
-    </style>
 </head>
 
 <body>
 
-    <div class="container" id="main">
+    <section class="container" id="main">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 mt-5">
                 <div>
-                    <h1 class="text-center" id="title">Dr. Norman Borlaug</h1>
+                    <h1 class="text-center text-danger" id="title">Dr. Norman Borlaug</h1>
                     <p class="text-center">The man who saved a billion lives</p>
                 </div>
 
-                <div class="img-responsive text-center" id="img-div">
-                    <img src="https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg" id="image">
-                    <figcaption id="img-caption">Dr. Norman Borlaug, third from the left, trains biologists in Mexico on
-                        how to increase wheat yields - part of his life-long war on hunger.</figcaption>
-                </div>
+                <figure class="card shadow p-5 text-center" id="img-div">
+                    <img src="https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg"  class="img-fluid" id="image">
+                    <figcaption id="img-caption">Dr. Norman Borlaug, third from the left, trains biologists
+                        in Mexico on how to increase wheat yields - part of his life-long war on hunger.</figcaption>
+                </figure>
+
             </div>
-        </div>
+        </section>
 
         <br>
         <br>
 
         <section id="tribute-info">
-            <h3 class="font-weight-bold text-center">Here's a time line of Dr. Borlaug's life:</h3>
-
-
+            <h3 class="font-weight-bold text-center mb-5 text-danger">Here's a time line of Dr. Borlaug's life:</h3>
             <div class="row">
                 <div class="col"></div>
                 <div class="col-md-8">
@@ -164,9 +128,9 @@
         </section>
     </div>
 
-    <footer>
+    <footer class="bg-dark mt-5 p-5">
         <div class="footer-class text-center">
-            <h5 class="animated bounce slow">*This Project is developed by Vishal Bait for freeCodeCamp as part of
+            <h5 class="animated bounce slow text-white">*This Project is developed by Vishal Bait for freeCodeCamp as part of
                 Responsive Web Design
                 Certification.</h5>
         </div>
