@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -14,14 +14,10 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+
         nav {
             position: fixed !important;
-
             z-index: 2;
-        }
-
-        body {
-            background-color: aliceblue;
         }
 
         nav .navbar-brand {
@@ -29,97 +25,13 @@
             width: 40%;
         }
 
-        .first-div input {
-            display: block;
-            margin: auto;
-            margin-top: 20px;
-        }
-
-        .first-div h1 {
-            font-family: sans-serif;
-            background-color: aliceblue;
-            margin-top: 40px;
-        }
-
-
-        #submit {
-            font-size: 25px;
-        }
 
         .first-div {
             margin-top: 100px;
         }
 
-        .feature {
-            margin-top: 120px;
-        }
-
-
-        .feature ul li {
-            list-style-type: none;
-        }
-
-        .col-md-8 iframe {
-            width: 100% !important;
-            height: 350px;
-        }
-
-
-        .how_it_works {
-            margin-top: 120px;
-        }
-
-        .price {
-            margin-top: 120px;
-
-        }
-
-        .price .col-md-3 h4 {
-            font-family: sans-serif;
-            padding: 5px;
-        }
-
-
-
-
-        .price .col-md-3 {
-            border-style: solid;
-            border-width: 2px;
-            margin: auto;
-            padding: 10px 20px;
-            background-color: white;
-        }
-
-        .col-md-3 button {
-            font-family: sans-serif;
-            font-size: 20px;
-            border-radius: 0%;
-        }
-
-        footer {
-            margin-top: 60px;
-            background-color: rgb(41, 37, 37);
-            padding-top: 30px;
-            padding-bottom: 30px;
-        }
-
-        footer ul li {
-            font-family: sans-serif;
-            list-style-type: none;
-            font-size: 20px;
-            color: white;
-            font-weight: bold;
-            float: right;
-            margin-left: 10px;
-        }
-
-        footer p {
-            font-family: sans-serif;
-            font-size: 25px;
-        }
-
-
-        nav ul li {
+       
+        nav ul li,#submit {
             font-size: 20px;
         }
 
@@ -129,13 +41,6 @@
                 width: 100%;
             }
 
-            .col-md-3 {
-                margin-bottom: 40px !important;
-            }
-
-            .first-div {
-                margin-top: 200px;
-            }
         }
     </style>
 </head>
@@ -146,8 +51,9 @@
 
     <header>
         <nav id="navbar-scroll" class="navbar navbar-light bg-light" id="nav-bar">
-            <img class="navbar-brand" id="header-img"
-                src="https://s3.amazonaws.com/freecodecamp/original_trombones.png">
+            <img class="navbar-brand" id="header-img" src="https://s3.amazonaws.com/freecodecamp/original_trombones.png"
+                class="img-fluid">
+
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a class="nav-link" href="#part1">Features</a>
@@ -163,37 +69,37 @@
     </header>
 
 
-    <div data-spy="scroll" data-target="#navbar-scroll" data-offset="0">
+    <main data-spy="scroll" data-target="#navbar-scroll" data-offset="0">
 
-        <div class="container">
+        <section class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="first-div">
-                        <h1 class="text-center font-weight-bold animated flip slow">Handcrafted, Home-made masterpieces
+                <div class="col-md-12 my-5">
+                    <div class="first-div text-center">
+                        <h1 class="text-center font-weight-bold animated flip display-3 mb-5 slow">Handcrafted, Home-made Masterpieces
                         </h1>
                         <form id="form">
                             <div class="form-group">
                                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                                     placeholder="Enter your email address">
                                 <input type="submit" id="submit"
-                                    class="btn btn-warning text-center font-weight-bold rounded-pill px-5 text-uppercase"
+                                    class="btn btn-warning  mt-4 text-center font-weight-bold rounded-pill px-5 text-uppercase"
                                     value="GET STARTED">
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
 
 
 
 
-        <div class="container feature" id="part1">
+        <section class="container" id="part1">
             <div class="row">
-                <div class="col-md-12 text-center">
-                    <ul>
-                        <li><i class="fa fa-4x fa-fire text-warning wow flash slow"></i>
+                <div class="col-md-12 text-center mb-5">
+                    
+                        <span><i class="fa fa-4x fa-fire text-warning wow flash slow"></i>
                             <div class="feature-info">
                                 <h2>Premium Materials</h2>
                                 <p>
@@ -201,11 +107,11 @@
                                     will increase the longevity of your purchase.
                                 </p>
                             </div>
-                        </li>
+                        </span>
 
                         <br>
 
-                        <li><i class="fa fa-4x fa-truck text-warning wow flash slow"></i>
+                        <span><i class="fa fa-4x fa-truck text-warning wow flash slow"></i>
                             <div class="feature-info">
                                 <h2>Fast Shipping</h2>
                                 <p>
@@ -213,12 +119,12 @@
                                     making it. We also provide free returns if you are not satisfied.
                                 </p>
                             </div>
-                        </li>
+                        </span>
 
                         <br>
 
 
-                        <li><i class="fa fa-4x fa-battery-full text-warning wow flash slow"></i>
+                        <span><i class="fa fa-4x fa-battery-full text-warning wow flash slow"></i>
                             <div class="feature-info">
                                 <h2>Quality Assurance</h2>
                                 <p>
@@ -226,93 +132,87 @@
                                     faults and we will check and test the pitch of your instrument.
                                 </p>
                             </div>
-                        </li>
-                    </ul>
+                        </span>
+                    
                 </div>
             </div>
-        </div>
+        </section>
 
 
 
 
-        <div class="container how_it_works" id="part2">
+        <section class="container my-5" id="part2">
             <div class="row">
                 <div class="col"></div>
                 <div class="col-md-8 card shadow-lg p-3 wow zoomIn slow">
-                    <iframe src="https://www.youtube.com/embed/y8Yv4pnO7qc" width="560" height="315" frameborder="0"
+                    <iframe  class="w-100" src="https://www.youtube.com/embed/y8Yv4pnO7qc" width="560" height="315" frameborder="0"
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
                 <div class="col"></div>
             </div>
-        </div>
+        </section>
 
 
 
-        <div class="container price" id="part3">
+        <section class="container" id="part3">
             <div class="row">
 
-                <div class="col-md-3 card shadow wow zoomIn slow text-center p-3">
+                <div class="col-md-3 mx-auto card shadow wow zoomIn slow text-center p-4 my-5">
                     <h4>TENOR TROMBONE</h4>
-                    
+
                     <h3 class="text-danger wow heartBeat slow">$300</h3>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perspiciatis repellat nam
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                        perspiciatis repellat nam
                         similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est cum
                         debitis nisi, iste porro aut!Assumenda commodi</p>
                     <button class="btn btn-warning text-center rounded-pill">SELECT</button>
                 </div>
 
 
-                <div class="col-md-3 card shadow wow zoomIn slow text-center p-3">
+                <div class="col-md-3 card mx-auto shadow wow zoomIn slow text-center p-4 my-5">
                     <h4>TENOR BASS</h4>
-                
+
                     <h3 class="text-danger wow heartBeat slow">$300</h3>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perspiciatis repellat nam
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                        perspiciatis repellat nam
                         similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est cum
                         debitis nisi, iste porro aut!Assumenda commodi</p>
                     <button class="btn btn-warning text-center rounded-pill">SELECT</button>
                 </div>
 
 
-                <div class="col-md-3 card shadow wow zoomIn slow text-center p-3">
+                <div class="col-md-3 mx-auto card shadow wow zoomIn slow text-center p-4 m-5">
                     <h4>TENOR VALVE</h4>
-                    
+
                     <h3 class="text-danger wow heartBeat slow">$300</h3>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam perspiciatis repellat nam
+                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                        perspiciatis repellat nam
                         similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est cum
                         debitis nisi, iste porro aut!Assumenda commodi</p>
                     <button class="btn btn-warning text-center rounded-pill">SELECT</button>
                 </div>
-                
+
             </div>
-        </div>
+        </section>
 
 
 
-        <footer>
+        <footer class="bg-dark mt-5 p-5">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
 
-                        <ul>
-                            <a href="#">
-                                <li>Privacy</li>
-                            </a>
-                            <a href="#">
-                                <li>Terms</li>
-                            </a>
-                            <a href="#">
-                                <li>Contact</li>
-                            </a>
-                        </ul>
-                        <br>
-                        <p class="text-white text-center"> Note: This project is developed by Vishal Bait for
-                            freeCodeCamp as part of Responsive Web Design certification.</p>
+                    
+                        <h3 class="text-white text-center p-3"> Note: This project is developed by Vishal Bait for
+                            freeCodeCamp as part of Responsive Web Design certification.</h3>
                     </div>
                 </div>
             </div>
         </footer>
-    </div>
+
+
+    </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();

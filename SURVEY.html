@@ -15,41 +15,23 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
-    <style>
-        h2 {
-            font-family: sans sarif;
-            background-color: aliceblue;
 
-        }
-
-        body {
-            margin-top: 50px;
-            margin-bottom: 50px;
-        }
-
-        .footer-class {
-            background-color: rgb(94, 86, 86);
-            width: 100%;
-            color:white;
-            margin-top: 30px;
-            padding: 20px;
-            margin-left: 0px !important;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container">
+
+    <section class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="text-center text-uppercase font-weight-bold text-primary animated flip slow" id="title">
+                <h2 class="text-center text-uppercase font-weight-bold display-4 mt-5 text-primary animated flip slow"
+                    id="title">
                     Survey Form </h2>
                 <p class="text-center"><i>Thank You for taking the time to help us improve the platform.</i></p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="offset-md-2 col-md-8">
 
                 <form id="survey-form" name="surveyForm" onsubmit="return validateForm()">
 
@@ -227,39 +209,41 @@
                             required></textarea>
                     </div>
 
-                    <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block" id="submit">
+                    <input type="submit" value="Submit" class="btn btn-primary btn-lg btn-block rounded-pill" id="submit">
                 </form>
 
             </div>
         </div>
+    </section>
 
-        <footer>
-            <div class="footer-class text-center">
-                <h5 class="animated bounce slow">*This Project is developed by Vishal Bait for freeCodeCamp as part of Responsive Web Design
-                    Certification.</h5>
-            </div>
-        </footer>
+    <footer class="bg-dark mt-5 p-5">
+        <div class="footer-class text-center text-white">
+            <h5 class="animated bounce slow">*This Project is developed by Vishal Bait for freeCodeCamp as part of
+                Responsive Web Design
+                Certification.</h5>
+        </div>
+    </footer>
 
-        
 
-        <script>
-            function validateForm() {
-                var x = document.forms["surveyForm"]["fullName"].value;
-                var y = document.forms["surveyForm"]["password"].value;
 
-                if (!isNaN(x)) {
-                    alert("Please Enter Proper Name");
-                    return false;
-                }
+    <script>
+        function validateForm() {
+            var x = document.forms["surveyForm"]["fullName"].value;
+            var y = document.forms["surveyForm"]["password"].value;
 
-                if ((y.length <= 7) || (y.length > 20)) {
-                    alert("Password length must be between 8 to 20");
-                    return false;
-                }
+            if (!isNaN(x)) {
+                alert("Please Enter Proper Name");
+                return false;
             }
 
+            if ((y.length <= 7) || (y.length > 20)) {
+                alert("Password length must be between 8 to 20");
+                return false;
+            }
+        }
 
-        </script>
+
+    </script>
 </body>
 
 
