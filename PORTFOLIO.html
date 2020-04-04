@@ -14,17 +14,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
+    <!--Font-Awesome CSS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
 
     <style>
         #welcome-section {
             height: 100vh;
             background-color: #303030;
-        }
-
-        #welcome-section h1 {
-            margin-top: 30vh;
-            font-family: sans-serif;
-           
+            font-family: 'Times New Roman', Times, serif;
         }
 
 
@@ -32,94 +30,36 @@
             background-color: #6A5ACD;
         }
 
-        #project a {
-            font-size: 30px;
-            text-align: center;
-            font-weight: bold;
-            font-family: sans sarif;
-            color: white;
-        }
-
-       
-
-
         #contact {
             height: 100vh;
             background-color: #303030;
         }
 
-       
-
-.heading {
-    color:white;
-    font-weight: bold;
-    margin-bottom:35px;
-    text-align: center;
-    margin-top: 40px;
-    font-family: 'Times New Roman', Times, serif;
-}
-
-
-        .img-project img {
-            width: 100%;
-            height: 200px;
-
-        }
-
-        .img-project figcaption {
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
             color: white;
-            font-weight: bold;
-            text-align: center;
-            background-color: black;
-            font-family: sans-serif;
-            padding: 10px;
-            font-size:18px;
         }
-
-        .img-project {
-            margin-bottom: 30px;
-        }
-
-        .icon {
-            margin-bottom: 55px;
-        }
-
-        .icon i {
-            margin-right: 20px;
-        }
-
-       .icon a {
-            text-decoration: none;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .img-project {
-                margin-bottom: 30px;
-                margin-left: 10px;
-                margin-right: 10px;
-            }
-        }
-        
     </style>
 </head>
 
 <body>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-
-
     <nav id="navbar" class="navbar navbar-light bg-light">
 
         <ul class="nav nav-pills">
+
             <li class="nav-item">
                 <a class="nav-link" href="#welcome-section">About</a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#project">Work</a>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
             </li>
+
         </ul>
     </nav>
 
@@ -127,144 +67,160 @@
 
 
 
-    <div data-spy="scroll" data-target="#navbar" data-offset="0">
+    <main data-spy="scroll" data-target="#navbar" data-offset="0">
 
-        <div id="welcome-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
+        <div class="container-fluid">
 
-                        <h1 class="text-center text-white  text-uppercase display-3">Vishal Bait</h1>
-                        <h3 class="text-center display-4 text-success"><i>Hey I am a Web Developer</i></h3>
+            <section id="welcome-section">
+                <div class="p-5 text-center text-white font-weight-bold text-uppercase align-middle">
 
+                    <img src="img/developer1.jpg" class="img-fluid text-center rounded-pill" alt=""
+                        style="width: 300px;;">
 
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div id="project">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-md-12">
-
-                        <h1 class="heading">These are some of my Projects</h1>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="img-project">
-                                <a href="https://codepen.io/vrb_vishalbait/pen/BayYVRO"><img src="img/1.png">
-                                <figcaption>Product Landing Page</figcaption></a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="img-project">
-                                <a href="https://codepen.io/vrb_vishalbait/pen/bGNaKpz"><img src="img/2.png" alt="Second Image">
-                                <figcaption>Tribute Page</figcaption></a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="img-project">
-                                <a href="https://codepen.io/vrb_vishalbait/pen/xxbpoRz"><img src="img/3.jpg" alt="Third-image">
-                                <figcaption>Survey-Form Page</figcaption></a>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="row">
-
-                        <div class="col-md-4">
-                            <div class="img-project">
-                                <a href="https://codepen.io/vrb_vishalbait/pen/zYxWLBZ"><img src="img/4.png" alt="Fourth-image">
-                                <figcaption>Resume Page</figcaption></a>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="img-project">
-                                <a href="https://codepen.io/vrb_vishalbait/pen/XWJZNKm"><img src="img/5.png" alt="fifth-image">
-                                <figcaption>Technical Documentation</figcaption></a>
-                            </div>
-                        </div>
-
+                    <div class="card shadow  py-3 mt-5 bg-info">
+                        <h1 class="mb-3">Vishal Bait </h1>
+                        <h3><i>Full Stack Web Developer</i></h3>
+                        <h3>HTML | CSS | JAVASCRIPT | REACT | JQUERRY | BOOTSTRAP | PHP | MYSQL </h3>
                     </div>
 
                 </div>
-            </div>
+            </section>
 
 
+            <section id="project">
+                <h1 class="text-uppercase text-center text-white mb-3 pt-5">These are some of my Projects</h1>
+                <div class="row mx-2">
+
+                    <div class="col-md-3 mb-5">
+                        <div class="card shadow p-3">
+                            <div class="img-project">
+                                <a href="https://codepen.io/vrb_vishalbait/pen/BayYVRO"><img src="img/1.png"
+                                        class="img-fluid" style="height:200px">
+                                    <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Product Landing
+                                        Page
+                                    </figcaption>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-5">
+                        <div class="card shadow p-3">
+                            <div class="img-project">
+                                <a href="https://codepen.io/vrb_vishalbait/pen/bGNaKpz"><img src="img/2.png"
+                                        class="img-fluid" style="height:200px">
+                                    <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Tribute
+                                        Page
+                                    </figcaption>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-3 mb-5">
+                        <div class="card shadow p-3">
+                            <div class="img-project">
+                                <a href="https://codepen.io/vrb_vishalbait/pen/mdypgWR"><img src="img/3.jpg"
+                                        class="img-fluid" style="height:200px">
+                                    <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Survey-Form Page
+                                    </figcaption>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-5">
+                        <div class="card shadow p-3">
+                            <div class="img-project">
+                                <a href="https://codepen.io/vrb_vishalbait/pen/zYxWLBZ"><img src="img/4.png"
+                                        class="img-fluid" style="height:200px">
+                                    <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Resume Page
+                                    </figcaption>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3 mb-5">
+                        <div class="card shadow p-3">
+                            <div class="img-project">
+                                <a href="https://codepen.io/vrb_vishalbait/pen/XWJZNKm"><img src="img/5.png"
+                                        class="img-fluid" style="height:200px">
+                                    <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Technical
+                                        Documentation
+                                        Page
+                                    </figcaption>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
 
 
             <section id="contact">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="text-center">
+                <div class="row">
+                    <div class="col-md-12  text-white text-center">
+                        <h1 class="text-white p-5">Let's Work Together</h1>
 
+                        <h3>Let's Contribute to Open-Source</h3>
 
+                        <div class="mt-4 fa-2x text-white">
 
-                                <h1 class="heading">Let's Work Together</h1>
+                            <a href=" #" target="_blank" class="text-white">
+                                <i class="fab fa-facebook mx-3 text-white"></i>
+                                Facebook
+                            </a>
 
-                                <div class="icon">
-                                <a href="#" target="_blank">
-                                    <h2><i class="fab fa-facebook fa-lg"></i>Facebook</h2>
-                                </a>
-                            </div>
+                            <br>
 
-                            <div class="icon">
-                                <a href="#" target="_blank">
-                                    <h2><i class="fab fa-twitter fa-lg"></i>Twitter</h2>
-                                </a>
-                            </div>
+                            <a href="#" target="_blank" class="text-white mb-3">
+                                <i class="fab fa-twitter mx-3 text-white "></i>
+                                Twitter
+                            </a>
 
-                            <div class="icon">
-                                <a href="https://github.com/Vishal1107" target="_blank" id="profile-link">
-                                    <h2><i class="fab fa-github fa-lg"></i>GitHub</h2>
-                                </a>
-                            </div>
+                            <br>
 
+                            <a href="#" target="_blank" class="text-white mb-3">
+                                <i class="fab fa-youtube mx-3 text-white"></i>
+                                Youtube
+                            </a>
 
-                            <div class="icon">
-                                    <a href="#" target="_blank" id="profile-link">
-                                        <h2><i class="fab fa-instagram fa-lg"></i>Instagram</h2>
-                                    </a>
-                                </div>
+                            <br>
 
-                                <div class="icon">
-                                        <a href="#" target="_blank" id="profile-link">
-                                            <h2><i class="fab fa-linkedin fa-lg"></i>Linkedin</h2>
-                                        </a>
-                                    </div>
-        
-    
+                            <a href="#" target="_blank" class="text-white mb-3">
+                                <i class="fab fa-linkedin mx-3 text-white"></i>
+                                Linkedin
+                            </a>
 
+                            <br>
 
+                            <a href="#" target="_blank" class="text-white mb-3">
+                                <i class="fab fa-instagram mx-3 text-white"></i>
+                                Instagram
+                            </a>
 
-                            </div>
                         </div>
+
                     </div>
                 </div>
             </section>
 
         </div>
+    </main>
 
-        <footer>
-            <div class="footer-class text-center">
-                <h5 class="animated bounce slow">*This Project is developed by Vishal Bait for freeCodeCamp as
-                    part of
-                    Responsive Web Design
-                    Certification.</h5>
-            </div>
-        </footer>
+    <footer>
+        <div class="footer-class p-3 text-center">
+            <h5 class="animated bounce slow">*This Project is developed by Vishal Bait for freeCodeCamp as
+                part of Responsive Web Design Certification.</h5>
+        </div>
+    </footer>
 </body>
 
 
