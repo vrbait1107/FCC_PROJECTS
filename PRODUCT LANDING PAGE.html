@@ -13,10 +13,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
 
+    <style>
         nav {
-            position: fixed !important;
             z-index: 2;
         }
 
@@ -25,13 +24,8 @@
             width: 40%;
         }
 
-
-        .first-div {
-            margin-top: 100px;
-        }
-
-       
-        nav ul li,#submit {
+        nav ul li,
+        #submit {
             font-size: 20px;
         }
 
@@ -40,7 +34,6 @@
                 height: 80%;
                 width: 100%;
             }
-
         }
     </style>
 </head>
@@ -69,96 +62,76 @@
     </header>
 
 
-    <main data-spy="scroll" data-target="#navbar-scroll" data-offset="0">
+    <main class="container" data-spy="scroll" data-target="#navbar-scroll" data-offset="0">
+        <div class="row">
 
-        <section class="container">
-            <div class="row">
-                <div class="col-md-12 my-5">
-                    <div class="first-div text-center">
-                        <h1 class="text-center font-weight-bold animated flip display-3 mb-5 slow">Handcrafted, Home-made Masterpieces
-                        </h1>
-                        <form id="form">
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                                    placeholder="Enter your email address">
-                                <input type="submit" id="submit"
-                                    class="btn btn-warning  mt-4 text-center font-weight-bold rounded-pill px-5 text-uppercase"
-                                    value="GET STARTED">
-                            </div>
-                        </form>
-                    </div>
+            <section class="col-md-12 my-5">
+                <div class="text-center">
+                    <h1 class="text-center font-weight-bold animated flip display-3 mb-5 slow">Handcrafted,
+                        Home-made Masterpieces
+                    </h1>
+                    <form id="form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                                placeholder="Enter your email address">
+                            <input type="submit" id="submit"
+                                class="btn btn-warning  mt-4 text-center font-weight-bold rounded-pill px-5"
+                                value="GET STARTED">
+                        </div>
+                    </form>
                 </div>
-            </div>
-        </section>
+        </div>
 
 
+        <div class="col-md-12 text-center mb-5" id="part1">
 
-
-
-        <section class="container" id="part1">
-            <div class="row">
-                <div class="col-md-12 text-center mb-5">
-                    
-                        <span><i class="fa fa-4x fa-fire text-warning wow flash slow"></i>
-                            <div class="feature-info">
-                                <h2>Premium Materials</h2>
-                                <p>
-                                    Our trombones use the shiniest brass which is sourced locally. This
-                                    will increase the longevity of your purchase.
-                                </p>
-                            </div>
-                        </span>
-
-                        <br>
-
-                        <span><i class="fa fa-4x fa-truck text-warning wow flash slow"></i>
-                            <div class="feature-info">
-                                <h2>Fast Shipping</h2>
-                                <p>
-                                    We make sure you recieve your trombone as soon as we have finished
-                                    making it. We also provide free returns if you are not satisfied.
-                                </p>
-                            </div>
-                        </span>
-
-                        <br>
-
-
-                        <span><i class="fa fa-4x fa-battery-full text-warning wow flash slow"></i>
-                            <div class="feature-info">
-                                <h2>Quality Assurance</h2>
-                                <p>
-                                    For every purchase you make, we will ensure there are no damages or
-                                    faults and we will check and test the pitch of your instrument.
-                                </p>
-                            </div>
-                        </span>
-                    
+            <span><i class="fa fa-4x fa-fire text-warning wow flash slow"></i>
+                <div class="feature-info">
+                    <h2>Premium Materials</h2>
+                    <p>
+                        Our trombones use the shiniest brass which is sourced locally. This
+                        will increase the longevity of your purchase.
+                    </p>
                 </div>
-            </div>
-        </section>
+            </span>
 
+            <br>
 
-
-
-        <section class="container my-5" id="part2">
-            <div class="row">
-                <div class="col"></div>
-                <div class="col-md-8 card shadow-lg p-3 wow zoomIn slow">
-                    <iframe  class="w-100" src="https://www.youtube.com/embed/y8Yv4pnO7qc" width="560" height="315" frameborder="0"
-                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
+            <span><i class="fa fa-4x fa-truck text-warning wow flash slow"></i>
+                <div class="feature-info">
+                    <h2>Fast Shipping</h2>
+                    <p>
+                        We make sure you recieve your trombone as soon as we have finished
+                        making it. We also provide free returns if you are not satisfied.
+                    </p>
                 </div>
-                <div class="col"></div>
-            </div>
-        </section>
+            </span>
+
+            <br>
+
+
+            <span><i class="fa fa-4x fa-battery-full text-warning wow flash slow"></i>
+                <div class="feature-info">
+                    <h2>Quality Assurance</h2>
+                    <p>
+                        For every purchase you make, we will ensure there are no damages or
+                        faults and we will check and test the pitch of your instrument.
+                    </p>
+                </div>
+            </span>
+            </section>
 
 
 
-        <section class="container" id="part3">
-            <div class="row">
+            <section class="col-md-8 offset-md-2 card shadow-lg p-3 wow zoomIn slow" id="part2">
+                <iframe class="w-100" src="https://www.youtube.com/embed/y8Yv4pnO7qc" width="560" height="315"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </section>
 
-                <div class="col-md-3 mx-auto card shadow wow zoomIn slow text-center p-4 my-5">
+
+            <section class="row">
+                <div class="col-md-3 mx-auto card shadow wow zoomIn slow text-center p-4 my-5" id="part3">
                     <h4>TENOR TROMBONE</h4>
 
                     <h3 class="text-danger wow heartBeat slow">$300</h3>
@@ -192,27 +165,23 @@
                         debitis nisi, iste porro aut!Assumenda commodi</p>
                     <button class="btn btn-warning text-center rounded-pill">SELECT</button>
                 </div>
+            </section>
 
-            </div>
-        </section>
-
-
-
-        <footer class="bg-dark mt-5 p-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-
-                    
-                        <h3 class="text-white text-center p-3"> Note: This project is developed by Vishal Bait for
-                            freeCodeCamp as part of Responsive Web Design certification.</h3>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-
+        </div>
     </main>
+
+
+    <footer class="bg-dark container-fluid mt-5 p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-white text-center p-3"> Note: This project is developed by Vishal Bait for
+                    freeCodeCamp as part of Responsive Web Design certification.</h3>
+            </div>
+        </div>
+    </footer>
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         new WOW().init();
