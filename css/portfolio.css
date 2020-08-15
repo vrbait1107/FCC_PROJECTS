@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+#welcome-section {
+  min-height: 100vh;
+  background-color: #303030;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#project {
+  background-color: #6a5acd;
+  min-height: 100vh;
+}
+
+#contact {
+  background-color: #303030;
+  min-height: 75vh;
+}
+
+h1 {
+  font-family: "Staatliches", cursive;
+}
+
+.font-staatliches {
+  font-family: "Staatliches", cursive;
+}
+
+@media only screen and (max-width: 600px) {
+  h1,
+  .display-4 {
+    font-size: 35px !important;
+  }
+  #welcome-section {
+    width: 100%;
+  }
+  #welcome-section .skills {
+    font-size: 25px;
+  }
+  #project {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #project .col-md-3 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  #contact {
+    width: 100%;
+  }
+  #contact .col-2 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+/*# sourceMappingURL=portfolio.css.map */

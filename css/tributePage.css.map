@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,OAAO,CAAC,wEAAI;AAEZ,AAAA,EAAE,CAAC;EACD,WAAW,EAAE,sBAAsB;CACpC;;AAED,MAAM,MAAM,MAAM,MAAM,SAAS,EAAE,KAAK;EACtC,AAAA,KAAK,CAAC;IACJ,OAAO,EAAE,cAAc;GACxB;EAED,AAAA,YAAY,CAAC;IACX,WAAW,EAAE,IAAI;IACjB,cAAc,EAAE,IAAI;GACrB",
+    "sources": [
+        "../scss/tributePage.scss"
+    ],
+    "names": [],
+    "file": "tributePage.css"
+}

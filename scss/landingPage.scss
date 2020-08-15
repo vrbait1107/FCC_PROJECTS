@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+nav {
+  z-index: 2;
+}
+
+nav .navbar-brand {
+  height: 30%;
+  width: 40%;
+}
+
+.title {
+  font-family: "Staatliches", cursive;
+  font-size: 50px;
+}
+
+.title-main {
+  font-family: "Staatliches", cursive;
+}
+
+nav ul li,
+#submit {
+  font-size: 20px;
+}
+
+#part1 {
+  min-height: 80vh;
+  align-items: center;
+}
+
+#part2 {
+  min-height: 100vh;
+  align-items: center;
+}
+
+#part3 {
+  min-height: 60vh;
+  align-items: center;
+}
+
+#part4 {
+  min-height: 70vh;
+  align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+  nav .navbar-brand {
+    height: 80%;
+    width: 100%;
+  }
+
+  #part1 {
+    padding-top: 50px;
+  }
+
+  #part2 h2 {
+    font-size: 25px;
+  }
+
+  .title {
+    font-family: "Staatliches", cursive;
+    font-size: 30px;
+  }
+
+  .title-main {
+    font-family: "Staatliches", cursive;
+    font-size: 35px;
+  }
+}

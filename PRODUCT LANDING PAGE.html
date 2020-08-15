@@ -6,41 +6,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Product Landing Page</title>
-    <!--    Animate.css   -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
+    <!--Animate.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Local Css -->
+    <link rel="stylesheet" href="css/landingPage.css">
 
-    <style>
-        nav {
-            z-index: 2;
-        }
-
-        nav .navbar-brand {
-            height: 30%;
-            width: 40%;
-        }
-
-        nav ul li,
-        #submit {
-            font-size: 20px;
-        }
-
-        @media only screen and (max-width: 600px) {
-            nav .navbar-brand {
-                height: 80%;
-                width: 100%;
-            }
-        }
-    </style>
 </head>
 
 <body>
-
-
 
     <header>
         <nav id="navbar-scroll" class="navbar navbar-light bg-light" id="nav-bar">
@@ -49,138 +27,144 @@
 
             <ul class="nav nav-pills">
                 <li class="nav-item">
-                    <a class="nav-link" href="#part1">Features</a>
+                    <a class="nav-link" href="#part2">Features</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#part2">How it Works</a>
+                    <a class="nav-link" href="#part3">How it Works</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#part3">Pricing</a>
+                    <a class="nav-link" href="#part4">Pricing</a>
                 </li>
             </ul>
         </nav>
     </header>
 
 
-    <main class="container" data-spy="scroll" data-target="#navbar-scroll" data-offset="0">
-        <div class="row">
+    <main class="container">
 
-            <section class="col-md-12 my-5">
+        <div class="row" id="part1">
+
+            <section class="col-md-12">
+
                 <div class="text-center">
-                    <h1 class="text-center font-weight-bold animated flip display-3 mb-5 slow">Handcrafted,
+                    <h1 class="text-center display-3 mb-5 title-main">Handcrafted,
                         Home-made Masterpieces
                     </h1>
                     <form id="form">
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
-                                placeholder="Enter your email address">
-                            <input type="submit" id="submit"
-                                class="btn btn-warning  mt-4 text-center font-weight-bold rounded-pill px-5"
-                                value="GET STARTED">
+                        <div class="form-group  col-md-6 offset-md-3">
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                            <button class="btn btn-outline-primary mt-4">Get Started</button>
                         </div>
                     </form>
                 </div>
+
+            </section>
         </div>
 
+        <hr />
 
-        <div class="col-md-12 text-center mb-5" id="part1">
+        <h2 class="text-center title alert alert-info">Features</h2>
 
-            <span><i class="fa fa-4x fa-fire text-warning wow flash slow"></i>
-                <div class="feature-info">
-                    <h2>Premium Materials</h2>
-                    <p>
-                        Our trombones use the shiniest brass which is sourced locally. This
-                        will increase the longevity of your purchase.
-                    </p>
-                </div>
-            </span>
+        <div class="row text-center" id="part2">
+            <section class="col-md-12">
+                <span><i class="fa fa-4x fa-fire text-warning wow flash slow"></i>
+                    <div class="feature-info">
+                        <h2>Premium Materials</h2>
+                        <p>
+                            Our trombones use the shiniest brass which is sourced locally. This
+                            will increase the longevity of your purchase.
+                        </p>
+                    </div>
+                </span>
 
-            <br>
+                <br>
 
-            <span><i class="fa fa-4x fa-truck text-warning wow flash slow"></i>
-                <div class="feature-info">
-                    <h2>Fast Shipping</h2>
-                    <p>
-                        We make sure you recieve your trombone as soon as we have finished
-                        making it. We also provide free returns if you are not satisfied.
-                    </p>
-                </div>
-            </span>
+                <span><i class="fa fa-4x fa-truck text-warning wow flash slow"></i>
+                    <div class="feature-info">
+                        <h2>Fast Shipping</h2>
+                        <p>
+                            We make sure you recieve your trombone as soon as we have finished
+                            making it. We also provide free returns if you are not satisfied.
+                        </p>
+                    </div>
+                </span>
 
-            <br>
+                <br>
 
 
-            <span><i class="fa fa-4x fa-battery-full text-warning wow flash slow"></i>
-                <div class="feature-info">
-                    <h2>Quality Assurance</h2>
-                    <p>
-                        For every purchase you make, we will ensure there are no damages or
-                        faults and we will check and test the pitch of your instrument.
-                    </p>
-                </div>
-            </span>
+                <span><i class="fa fa-4x fa-battery-full text-warning wow flash slow"></i>
+                    <div class="feature-info">
+                        <h2>Quality Assurance</h2>
+                        <p>
+                            For every purchase you make, we will ensure there are no damages or
+                            faults and we will check and test the pitch of your instrument.
+                        </p>
+                    </div>
+                </span>
+
             </section>
+        </div>
 
+        <hr />
 
-
-            <section class="col-md-8 offset-md-2 card shadow-lg p-3 wow zoomIn slow" id="part2">
-                <iframe class="w-100" src="https://www.youtube.com/embed/y8Yv4pnO7qc" width="560" height="315"
+        <h2 class="text-center title alert alert-info">How It's Works</h2>
+        <div class="row" id="part3">
+            <section class="col-md-8 offset-md-2 card shadow-lg">
+                <iframe class=" w-100" src="https://www.youtube.com/embed/y8Yv4pnO7qc" width="560" height="315"
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </section>
+        </div>
 
 
-            <section class="row">
-                <div class="col-md-3 mx-auto card shadow wow zoomIn slow text-center p-4 my-5" id="part3">
-                    <h4>TENOR TROMBONE</h4>
 
-                    <h3 class="text-danger wow heartBeat slow">$300</h3>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                        perspiciatis repellat nam
-                        similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est cum
-                        debitis nisi, iste porro aut!Assumenda commodi</p>
-                    <button class="btn btn-warning text-center rounded-pill">SELECT</button>
-                </div>
+        <hr />
 
+        <h2 class="text-center title alert alert-info">Pricings</h2>
+        <div class="row" id="part4">
+            <div class="col-md-3 mx-auto mb-5 text-center">
+                <h4>TENOR TROMBONE</h4>
 
-                <div class="col-md-3 card mx-auto shadow wow zoomIn slow text-center p-4 my-5">
-                    <h4>TENOR BASS</h4>
-
-                    <h3 class="text-danger wow heartBeat slow">$300</h3>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                        perspiciatis repellat nam
-                        similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est cum
-                        debitis nisi, iste porro aut!Assumenda commodi</p>
-                    <button class="btn btn-warning text-center rounded-pill">SELECT</button>
-                </div>
+                <h3 class="text-danger">$300</h3>
+                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                    perspiciatis repellat nam
+                    similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est
+                    cum
+                    debitis nisi, iste porro aut!Assumenda commodi</p>
+                <button class="btn btn-outline-success btn-block text-center rounded-pill">SELECT</button>
+            </div>
 
 
-                <div class="col-md-3 mx-auto card shadow wow zoomIn slow text-center p-4 m-5">
-                    <h4>TENOR VALVE</h4>
+            <div class="col-md-3 mx-auto mb-5 text-center">
+                <h4>TENOR BASS</h4>
 
-                    <h3 class="text-danger wow heartBeat slow">$300</h3>
-                    <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                        perspiciatis repellat nam
-                        similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est cum
-                        debitis nisi, iste porro aut!Assumenda commodi</p>
-                    <button class="btn btn-warning text-center rounded-pill">SELECT</button>
-                </div>
-            </section>
+                <h3 class="text-danger">$300</h3>
+                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                    perspiciatis repellat nam
+                    similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est
+                    cum
+                    debitis nisi, iste porro aut!Assumenda commodi</p>
+                <button class="btn btn-outline-success btn-block text-center rounded-pill">SELECT</button>
+            </div>
 
+
+            <div class="col-md-3 mx-auto mb-5 text-center">
+                <h4>TENOR VALVE</h4>
+
+                <h3 class="text-danger">$300</h3>
+                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
+                    perspiciatis repellat nam
+                    similique enim, libero eveniet quidem quos id, deleniti exercitationem laudantium non est
+                    cum
+                    debitis nisi, iste porro aut!Assumenda commodi</p>
+                <button class="btn btn-outline-success btn-block text-center rounded-pill">SELECT</button>
+            </div>
         </div>
     </main>
 
-
-    <footer class="bg-dark container-fluid mt-5 p-3">
-        <div class="row">
-            <div class="col-md-12">
-                <h3 class="text-white text-center p-3"> Note: This project is developed by Vishal Bait for
-                    freeCodeCamp as part of Responsive Web Design certification.</h3>
-            </div>
-        </div>
+    <footer class="alert alert-dark container-fluid text-center mt-5 p-3">
+        <h5 class="text-ceter">Developed By Vishal Bait</h5>
     </footer>
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>

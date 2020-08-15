@@ -7,39 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Portfolio</title>
 
-    <!--    Animate.css   -->
+    <!-- Animate.css   -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!--Font-Awesome CSS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <!-- Local css -->
+    <link rel="stylesheet" href="css/portfolio.css">
 
-
-    <style>
-        #welcome-section {
-            height: 100vh;
-            background-color: #303030;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-
-        #project {
-            background-color: #6A5ACD;
-        }
-
-        #contact {
-            height: 100vh;
-            background-color: #303030;
-        }
-
-        h1 {
-            font-family: 'Times New Roman', Times, serif;
-            color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -64,23 +41,20 @@
     </nav>
 
 
-
-
-
     <main data-spy="scroll" data-target="#navbar" data-offset="0">
 
         <div class="container-fluid">
 
             <section id="welcome-section">
-                <div class="p-5 text-center text-white font-weight-bold text-uppercase align-middle">
+                <div class="py-5 text-center text-white font-weight-bold text-uppercase align-middle">
 
                     <img src="img/developer1.jpg" class="img-fluid text-center rounded-pill" alt=""
                         style="width: 300px;;">
 
-                    <div class="card shadow  py-3 mt-5 bg-info">
-                        <h1 class="mb-3">Vishal Bait </h1>
-                        <h3><i>Full Stack Web Developer</i></h3>
-                        <h3>HTML | CSS | JAVASCRIPT | REACT | JQUERRY | BOOTSTRAP | PHP | MYSQL </h3>
+                    <div class="card shadow alert alert-info text-dark py-3 mt-5">
+                        <h1 class="mb-1 display-4">Vishal Bait </h1>
+                        <h3 class="font-staatliches display-4">Full Stack Web Developer</h3>
+                        <h3 class="skills">HTML | CSS | JAVASCRIPT | REACT | JQUERY | BOOTSTRAP | PHP | MYSQL </h3>
                     </div>
 
                 </div>
@@ -88,14 +62,14 @@
 
 
             <section id="project">
-                <h1 class="text-uppercase text-center text-white mb-3 pt-5">These are some of my Projects</h1>
+                <h1 class="text-uppercase text-center text-white display-4 mb-3 pt-5">These are some of my Projects</h1>
                 <div class="row mx-2">
 
                     <div class="col-md-3 mb-5">
-                        <div class="card shadow p-3">
+                        <div class="card shadow">
                             <div class="img-project">
                                 <a href="https://codepen.io/vrbait1107/pen/BayYVRO"><img src="img/1.png"
-                                        class="img-fluid" style="height:200px">
+                                        class="img-fluid" style="min-height:180px">
                                     <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Product Landing
                                         Page
                                     </figcaption>
@@ -106,10 +80,10 @@
 
 
                     <div class="col-md-3 mb-5">
-                        <div class="card shadow p-3">
+                        <div class="card shadow">
                             <div class="img-project">
                                 <a href="https://codepen.io/vrbait1107/pen/bGNaKpz"><img src="img/2.png"
-                                        class="img-fluid" style="height:200px">
+                                        class="img-fluid" style="min-height:180px">
                                     <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Tribute
                                         Page
                                     </figcaption>
@@ -121,10 +95,10 @@
 
 
                     <div class="col-md-3 mb-5">
-                        <div class="card shadow p-3">
+                        <div class="card shadow">
                             <div class="img-project">
                                 <a href="https://codepen.io/vrbait1107/pen/mdypgWR"><img src="img/3.jpg"
-                                        class="img-fluid" style="height:200px">
+                                        class="img-fluid" style="min-height:180px">
                                     <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Survey-Form Page
                                     </figcaption>
                                 </a>
@@ -134,10 +108,10 @@
 
 
                     <div class="col-md-3 mb-5">
-                        <div class="card shadow p-3">
+                        <div class="card shadow">
                             <div class="img-project">
                                 <a href="https://codepen.io/vrbait1107/pen/zYxWLBZ"><img src="img/4.png"
-                                        class="img-fluid" style="height:200px">
+                                        class="img-fluid" style="min-height:180px">
                                     <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Resume Page
                                     </figcaption>
                                 </a>
@@ -147,10 +121,10 @@
 
 
                     <div class="col-md-3 mb-5">
-                        <div class="card shadow p-3">
+                        <div class="card shadow">
                             <div class="img-project">
                                 <a href="https://codepen.io/vrbait1107/pen/XWJZNKm"><img src="img/5.png"
-                                        class="img-fluid" style="height:200px">
+                                        class="img-fluid" style="min-height:180px">
                                     <figcaption class="btn btn-primary btn-block rounded-pill mt-3">Technical
                                         Documentation
                                         Page
@@ -165,60 +139,64 @@
 
 
             <section id="contact">
-                <div class="row">
-                    <div class="col-md-12  text-white text-center">
-                        <h1 class="text-white p-5">Let's Work Together</h1>
+                <h1 class="text-white text-center p-5 display-4">Let's Work Together</h1>
 
-                        <h3>Let's Contribute to Open-Source</h3>
+                <div class="row text-center">
 
-                        <div class="mt-4 fa-2x text-white">
-
-                            <a href=" #" target="_blank" class="text-white">
-                                <i class="fab fa-facebook mx-3 text-white"></i>
-                                Facebook
-                            </a>
-
-                            <br>
-
-                            <a href="#" target="_blank" class="text-white mb-3">
-                                <i class="fab fa-twitter mx-3 text-white "></i>
-                                Twitter
-                            </a>
-
-                            <br>
-
-                            <a href="#" target="_blank" class="text-white mb-3">
-                                <i class="fab fa-youtube mx-3 text-white"></i>
-                                Youtube
-                            </a>
-
-                            <br>
-
-                            <a href="#" target="_blank" class="text-white mb-3">
-                                <i class="fab fa-linkedin mx-3 text-white"></i>
-                                Linkedin
-                            </a>
-
-                            <br>
-
-                            <a href="#" target="_blank" class="text-white mb-3">
-                                <i class="fab fa-instagram mx-3 text-white"></i>
-                                Instagram
-                            </a>
-
-                        </div>
-
+                    <div class="col-md-2 card mx-auto col-6 p-2 mb-5 text-dark">
+                        <i class="fab fa-github fa-4x"></i>
+                        GitHub
                     </div>
+
+                    <div class="col-md-2 card mx-auto p-2 col-6 mb-5 text-dark">
+                        <i class="fab fa-linkedin fa-4x"></i>
+                        Linkedin
+                    </div>
+                    <div class="col-md-2 card  mx-auto p-2 col-6 mb-5 text-dark">
+                        <i class="fab fa-codepen fa-4x"></i>
+                        Codpen
+                    </div>
+
+                    <div class="col-md-2 card mx-auto p-2 col-6 mb-5 text-dark">
+                        <i class="fab fa-stack-overflow fa-4x"></i>
+                        Stack-Oveflow
+                    </div>
+
                 </div>
+
+
+                <div class="row text-center">
+
+                    <div class="col-md-2 card mx-auto p-2 col-6  mb-5 text-dark">
+                        <i class="fab fa-twitter fa-4x"></i>
+                        Twitter
+                    </div>
+
+                    <div class="col-md-2 card mx-auto p-2  col-6 mb-5 text-dark">
+                        <i class="fab fa-instagram fa-4x"></i>
+                        Instagram
+                    </div>
+                    <div class="col-md-2 card  mx-auto p-2 col-6 mb-5 text-dark">
+                        <i class="fab fa-facebook fa-4x"></i>
+                        Facebook
+                    </div>
+
+                    <div class="col-md-2 card mx-auto p-2 col-6 mb-5 text-dark">
+                        <i class="fab fa-youtube fa-4x"></i>
+                        Facebook
+                    </div>
+
+                </div>
+
+
             </section>
 
         </div>
     </main>
 
     <footer>
-        <div class="footer-class p-3 text-center">
-            <h5 class="animated bounce slow">*This Project is developed by Vishal Bait for freeCodeCamp as
-                part of Responsive Web Design Certification.</h5>
+        <div class="footer-class alert alert-warning text-center">
+            <h5 class="text-uppercase">#Developed by Vishal Bait</h5>
         </div>
     </footer>
 </body>

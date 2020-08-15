@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
+h1 {
+  font-family: "Staatliches", cursive;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    padding: 0px !important;
+  }
+
+  #img-caption {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
