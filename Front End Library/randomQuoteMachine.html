@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Random Quote Machine</title>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Raleway:400,500");
+
+        .main {
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: pink;
+            color: white;
+        }
+
+        .btn:hover {
+            color: white;
+        }
+
+        body {
+            background: pink;
+        }
+
+        h4,
+        h5 {
+            font-family: "Raleway", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script>
+
+        const { useState, useEffect } = React;
+
+        const colors = [
+            "#16a085",
+            "#27ae60",
+            "#2c3e50",
+            "#f39c12",
+            "#e74c3c",
+            "#9b59b6",
+            "#FB6964",
+            "#342224",
+            "#472E32",
+            "#BDBB99",
+            "#77B1A9",
+            "#73A857"
+        ];
+
+        const API =
+            "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
+
+        const App = () => {
+            const [quote, setQuotes] = useState([]);
+            const [index, setIndex] = useState(0);
+            const [colorIndex, setColorIndex] = useState("");
+
+            const getQuotes = async () => {
+                try {
+                    const quotes = await axios.get(API);
+                    setQuotes(quotes.data.quotes);
+                } catch (err) {
+                    console.error(err.message);
+                }
+            };
+
+            useEffect(() => {
+                getQuotes();
+            }, []);
+
+            const getRandomeQuote = () => {
+                if (quote.length > 0) {
+                    const quoteIndex = Math.floor(Math.random() * quote.length);
+                    setIndex(quoteIndex);
+                }
+            };
+
+            const getRandomeColor = () => {
+                if (colors.length > 0) {
+                    const colorIndexValue = Math.floor(Math.random() * colors.length);
+                    setColorIndex(colorIndexValue);
+                }
+            };
+
+            const random = () => {
+                getRandomeQuote();
+                getRandomeColor();
+            };
+
+            const value = quote[index];
+
+            console.log(value);
+
+            return (
+
+                <div className="container">
+                    <div className="row main align-self-center">
+                        <div className="col-md-6 card shadow p-5 offset-md-3">
+                            <h4 className="font-weight-bold"
+                                style={{ color: colors[colorIndex] }}>
+                                "{value && value.quote}"
+                            </h4>
+
+                            <h5
+                                className="text-right font-weight-bold mb-2"
+                                style={{ color: colors[colorIndex] }}>
+                                - {value && value.author}
+                            </h5>
+
+                            <div className="mt-3">
+                                <button
+                                    className="btn"
+                                    style={{ backgroundColor: colors[colorIndex] }}>
+                                    <i className="fab fa-twitter"></i> Tweet
+            </button>
+                                <button
+                                    className="btn float-right"
+                                    style={{ backgroundColor: colors[colorIndex] }}
+                                    onClick={random}
+                                >
+                                    <i className="fa fa-random"></i> Get Quote
+            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+
+</body>
+
+
+
+</html>
