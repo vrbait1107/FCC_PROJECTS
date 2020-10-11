@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Drum Machine</title>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+
+    <style>
+        .container {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .display {
+            display: flex;
+            width: 360px;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background-color: purple;
+            height: 100px;
+            width: 100px;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: "Time New Roman";
+            border: 1px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+
+        const sound = [
+            {
+                keyTrigger: "Q",
+                id: "Heater-1",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
+            },
+            {
+                keyTrigger: "W",
+                id: "Heater-2",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
+            },
+            {
+                keyTrigger: "E",
+                id: "Heater-3",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
+            },
+            {
+                keyTrigger: "A",
+                id: "Heater-4",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
+            },
+            {
+                keyTrigger: "S",
+                id: "Clap",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
+            },
+            {
+                keyTrigger: "D",
+                id: "Open-HH",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
+            },
+            {
+                keyTrigger: "Z",
+                id: "Kick-n'-Hat",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
+            },
+            {
+                keyTrigger: "X",
+                id: "Kick",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
+            },
+            {
+                keyTrigger: "C",
+                id: "Closed-HH",
+                url: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
+            }
+        ];
+
+
+        const { useState, useRef } = React;
+
+        const App = () => {
+
+            const [keyValue, setKeyValue] = useState("Nothing");
+            return (
+                <div>
+                    <h1 className="text-info text-center mt-2"> You Press {keyValue} </h1>
+                    <div className="container">
+                        <div className="display">
+                            {sound.map((item) => (
+                                <Box text={item.keyTrigger} key={item.id} audio={item.url} set={setKeyValue} />
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const Box = (props) => {
+            const myRef = useRef(null);
+
+            const playSound = (value) => {
+                myRef.current.play();
+                props.set(value);
+                console.log(value);
+            };
+
+            return (
+                <div className="box" id={props.text} onClick={() => playSound(props.text)}>
+                    <audio ref={myRef} src={props.audio} id={props.text} />
+                    {props.text}
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+
+</body>
+
+
+
+</html>
