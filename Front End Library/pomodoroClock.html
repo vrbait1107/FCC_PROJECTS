@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Pomodoro Clock</title>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #bdc4a7;
+            font-family: "Arial";
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .timer-container {
+            margin: 20px;
+        }
+
+        .action-wrapper button {
+            margin: 10px;
+        }
+
+        .action-wrapper span {
+            font-size: 25px;
+        }
+
+        .clock-container button {
+            margin: 10px;
+        }
+
+        .clock-container {
+            border: 1px solid black;
+            padding: 20px 30px;
+        }
+
+        .clock-container span {
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+        const { useState, useEffect } = React;
+
+        const App = () => {
+            const [timer, setTimer] = useState("Session");
+            const [breakLength, setBreakLength] = useState(5);
+            const [sessionLength, setSessionLength] = useState(25);
+            const [clockCount, setClockCount] = useState(
+                timer == "Session" ? sessionLength * 60 : breakLength * 60
+            );
+            const [isPlaying, setIsPlaying] = useState(false);
+
+            const convertToMiunute = (count) => {
+                const minutes = Math.floor(count / 60);
+                let seconds = count % 60;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                return `${minutes}:${seconds}`;
+            };
+
+            const handleBreakIncrease = () => {
+                if (!isPlaying) {
+                    setBreakLength(breakLength + 1);
+                }
+            };
+
+            const handleBreakDecrease = () => {
+                if (!isPlaying) {
+                    if (breakLength > 1) {
+                        setBreakLength(breakLength - 1);
+                    }
+                }
+            };
+
+            const handleSessionDecrease = () => {
+                if (!isPlaying) {
+                    if (sessionLength > 1) {
+                        setClockCount((sessionLength - 1) * 60);
+                        setSessionLength(sessionLength - 1);
+                    }
+                }
+            };
+
+            const handleSessionIncrease = () => {
+                if (!isPlaying) {
+                    setClockCount((sessionLength + 1) * 60);
+                    setSessionLength(sessionLength + 1);
+                }
+            };
+
+            let btnColor;
+            let textColor;
+
+            if (timer == "Session") {
+                btnColor = "btn btn-primary";
+                textColor = "text-dark";
+            } else {
+                btnColor = "btn btn-danger";
+                textColor = "text-danger";
+            }
+
+            const breakProps = {
+                title: "Break Length",
+                count: breakLength,
+                handleIncrease: handleBreakIncrease,
+                handleDecrease: handleBreakDecrease
+            };
+
+            const sessionProps = {
+                title: "Session Length",
+                count: sessionLength,
+                handleIncrease: handleSessionIncrease,
+                handleDecrease: handleSessionDecrease
+            };
+
+            const handlePause = () => {
+                setIsPlaying(!isPlaying);
+            };
+
+            const handleReset = () => {
+                setTimer("Session");
+                setClockCount(sessionLength * 60);
+                setIsPlaying(false);
+            };
+
+            useEffect(() => {
+                let interval = null;
+                if (isPlaying) {
+                    if (clockCount > 0) {
+                        interval = setInterval(() => {
+                            setClockCount(clockCount - 1);
+                        }, 1000);
+                    } else {
+                        if (timer === "Session") {
+                            setTimer("Break");
+                            setClockCount(breakLength * 60);
+                        } else {
+                            setTimer("Session");
+                            setClockCount(sessionLength * 60);
+                        }
+                    }
+                } else if (!isPlaying && clockCount !== 0) {
+                    clearInterval(interval);
+                }
+                return () => clearInterval(interval);
+            }, [isPlaying, clockCount]);
+
+            useEffect(() => {
+                return () => {
+                    clearInterval(loop);
+                };
+            }, []);
+
+            return (
+                <div>
+                    <div className="flex">
+                        <SetTimer {...breakProps} />
+                        <SetTimer {...sessionProps} />
+                    </div>
+
+                    <div
+                        className={
+                            timer == "Session"
+                                ? "text-dark clock-container text-center"
+                                : "text-danger clock-container text-center"
+                        }
+                    >
+                        <h3>{timer == "Session" ? "Session" : "Break"}</h3>
+                        <span>{convertToMiunute(clockCount)}</span>
+                        <div className="flex">
+                            <button className={btnColor} onClick={handlePause}>
+                                {isPlaying ? (
+                                    <i className="fas fa-pause"></i>
+                                ) : (
+                                        <i className="fas fa-play"></i>
+                                    )}
+                            </button>
+                            <button className={btnColor} onClick={handleReset}>
+                                <i className="fas fa-sync"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        const SetTimer = (props) => {
+            return (
+                <div className="timer-container">
+                    <h3>{props.title}</h3>
+                    <div className="flex action-wrapper">
+                        <button onClick={props.handleDecrease} className="btn btn-primary">
+                            <i className="fas fa-minus"></i>
+                        </button>
+                        <span> {props.count} </span>
+                        <button onClick={props.handleIncrease} className="btn btn-primary">
+                            <i className="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+
+</body>
+
+
+
+</html>
