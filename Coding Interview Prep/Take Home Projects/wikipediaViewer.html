@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Wikipedia Viewer</title>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <style>
+        .font-time {
+            font-family: "Times New Roman";
+        }
+
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+        .heading {
+            font-family: "Oswald", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+        const { useState, useEffect } = React;
+
+        const App = () => {
+            const [search, setSearch] = useState("");
+            const [searchResults, setSearchResults] = useState([]);
+            const page = "https://en.wikipedia.org/?curid=";
+
+            const handleSearch = () => {
+                setSearchResults([]);
+
+                let url = "https://en.wikipedia.org/w/api.php";
+
+                const params = {
+                    action: "query",
+                    list: "search",
+                    srsearch: search,
+                    format: "json"
+                };
+
+                url = url + "?origin=*";
+                Object.keys(params).forEach(function (key) {
+                    url += "&" + key + "=" + params[key];
+                });
+
+                axios({
+                    url: url
+                })
+                    .then((data) => {
+                        console.log(data.data.query.search);
+                        setSearchResults(data.data.query.search);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
+            };
+
+            const handleClearSearch = () => {
+                setSearchResults([]);
+            };
+
+            return (
+                <div className="container my-5">
+                    <div className="row">
+                        <div className="col-md-6 offset-md-3">
+                            <h1 className="text-info text-center heading">
+                                Search Wikipedia Article
+          </h1>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    className="form-control rounded-pill"
+                                    onChange={(e) => {
+                                        setSearch(e.target.value);
+                                    }}
+                                />
+                            </div>
+
+                            <div>
+                                <button
+                                    onClick={handleSearch}
+                                    className="btn mr-3 btn-outline-dark"
+                                >
+                                    Search
+              <i className="fas ml-1 fa-search"></i>
+                                </button>
+                                <button
+                                    onClick={handleClearSearch}
+                                    className="btn btn-outline-danger"
+                                >
+                                    Clear
+              <i className="fas ml-1 fa-times"></i>
+                                </button>
+
+                                <a
+                                    className="btn btn-outline-info ml-2"
+                                    href="https://en.wikipedia.org/wiki/Special:Random"
+                                    target="_blank"
+                                >
+                                    Random Article
+            </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row mt-5">
+                        <div className="col-md-8 offset-md-2">
+                            {searchResults &&
+                                searchResults.map((item, idx) => {
+                                    return (
+                                        <div className="card shadow mb-5 p-4">
+                                            <h3 className="font-time font-weight-bold">{item.title}</h3>
+
+                                            <p dangerouslySetInnerHTML={{ __html: item.snippet }} />
+
+                                            <a
+                                                href={page + item.pageid}
+                                                target="_blank"
+                                                className="btn view btn-outline-info"
+                                            >
+                                                View Article
+                  </a>
+                                        </div>
+                                    );
+                                })}
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+
+</body>
+
+
+
+</html>
