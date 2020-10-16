@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Show Local Weather</title>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/1.3.2/css/weather-icons.min.css">
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+        .font-oswald {
+            font-family: "Oswald", sans-serif;
+            font-size: 60px;
+        }
+
+        p {
+            font-size: 30px;
+            font-family: "Oswald", sans-serif;
+        }
+
+        span {
+            font-family: "Oswald", sans-serif;
+            cursor: pointer;
+            color: blue;
+        }
+
+        #image {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+        const { useEffect, useState } = React;
+
+        const App = () => {
+            const [status, setStatus] = useState({});
+            const [tempUnit, setTempUnit] = useState("C");
+            const [temp, setTemp] = useState(null);
+
+            const handleTemp = () => {
+                if (tempUnit == "C") {
+                    const temp = Math.round(
+                        (Math.round(status.main.temp * 10) / 10) * 1.8 + 32
+                    );
+
+                    setTempUnit("F");
+                    setTemp(temp);
+                } else {
+                    setTempUnit("C");
+                }
+            };
+
+            useEffect(() => {
+                let lat, lon;
+                let api = "https://weather-proxy.freecodecamp.rocks/api/current?";
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        let lat = "lat=" + position.coords.latitude;
+                        let lon = "lon=" + position.coords.longitude;
+                        getWeather(lat, lon);
+                    });
+                } else {
+                    console.log("Geolocation is not supported by this browser.");
+                }
+
+                const getWeather = (lat, lon) => {
+                    var urlString = api + lat + "&" + lon;
+                    axios({
+                        url: urlString,
+                        method: "GET"
+                    })
+                        .then((data) => {
+                            setStatus(data.data);
+                        })
+                        .catch((err) => {
+                            console.log(err);
+                        });
+                };
+            }, []);
+
+            return (
+                <main className="container mt-5">
+                    <div className="row">
+                        {console.log(status)}
+
+                        <section className="col-md-6 text-center offset-md-3">
+                            <header>
+                                <h1 className="font-oswald">
+                                    Free C<i class="wi wi-hail"></i>de Camp
+            </h1>
+                                <h1 className="font-oswald">Weather App</h1>
+                            </header>
+
+                            <div className="status">
+                                <p>
+                                    {status && status.name}, {status.sys && status.sys.country}
+                                </p>
+
+                                <p>
+                                    {tempUnit == "C"
+                                        ? status.main && Math.round(status.main.temp * 10) / 10
+                                        : status.main && temp}{" "}
+                                    <span onClick={handleTemp}>
+                                        {tempUnit == "C" ? "Celcius" : "Farenheit"}
+                                    </span>
+                                </p>
+
+                                <p>{status.weather && status.weather[0].main}</p>
+                                {status.weather && <img id="image" src={status.weather[0].icon} />}
+                            </div>
+                        </section>
+                    </div>
+                </main>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+    </script>
+
+</body>
+
+
+
+</html>
