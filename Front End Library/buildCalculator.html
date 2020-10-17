@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Build Calculator</title>
+
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            margin: 5px;
+            background-color: white;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .calculator {
+            width: 250px;
+            padding: 5px;
+            height: 390px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
+
+        .big-w {
+            width: 110px;
+            border-radius: 50px;
+        }
+
+        .big-v {
+            height: 110px;
+            border-radius: 50px;
+        }
+
+        #display {
+            width: 100%;
+            position: relative;
+            padding: 20px 10px;
+            text-align: right;
+            font-size: 35px;
+            color: white;
+        }
+
+        .orange {
+            background-color: #ee9406 !important;
+            color: white;
+        }
+
+        .dark-gray {
+            background-color: #323232;
+            color: #fff;
+        }
+
+        .num-container {
+            width: 75%;
+        }
+
+        .ops-container {
+            width: 25%;
+        }
+
+        .ac {
+            background-color: #a5a5a5;
+            margin-right: 50%;
+        }
+
+        .light-gray {
+            background-color: #a5a5a5;
+        }
+
+        button:active {
+            transform: scale(0.9);
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+
+        const num = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, "."];
+        const ops = ["/", "*", "-", "+", "="];
+
+        const { useState, useEffect } = React;
+
+        const App = () => {
+            const [lastPressed, setLastPressed] = useState(undefined);
+            const [calc, setCalc] = useState("0");
+
+            const handleClear = () => {
+                setCalc("0");
+                setLastPressed(undefined);
+            };
+
+            const handleClick = (e) => {
+                const value = e.target.innerText;
+
+                switch (value) {
+                    case "=": {
+                        const evaluated = eval(calc);
+                        setCalc(evaluated);
+                        break;
+                    }
+                    case ".": {
+                        const splitted = calc.split(/[\+\-\*\/]/);
+                        const last = splitted.slice(-1)[0];
+                        if (!last.includes(".")) {
+                            setCalc(calc + ".");
+                        }
+                    }
+                    default: {
+                        let e = undefined;
+
+                        if (ops.includes(value)) {
+                            if (ops.includes(lastPressed) && value !== "-") {
+                                e = calc.slic(0, -3) + ` ${value} `;
+                            } else {
+                                e = `${calc}  ${value} `;
+                            }
+                        } else {
+                            e = calc === "0" ? value : calc + value;
+                        }
+                        setCalc(e);
+                    }
+                }
+
+                setLastPressed(value);
+            };
+
+            return (
+                <div className="calculator">
+                    <div className="dispaly" id="display">
+                        {calc}
+                    </div>
+
+                    <div className="num-container">
+                        <button onClick={handleClear} className="light-gray big-w ac">
+                            AC
+                        </button>
+
+                        {num.map((item, idx) => {
+                            return (
+                                <button
+                                    onClick={handleClick}
+                                    className={`dark-gray ${item === 0 && "big-w"} ${item === "." && "light-gray"
+                                        }`}
+                                    key={item}
+                                >
+                                    {item}
+                                </button>
+                            );
+                        })}
+                    </div>
+
+                    <div className="ops-container">
+                        {ops.map((item, idx) => {
+                            return (
+                                <button onClick={handleClick} className="orange" key={item}>
+                                    {item}
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("app"));
+
+    </script>
+
+</body>
+
+
+
+</html>
